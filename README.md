@@ -1,4 +1,4 @@
-#WDI LA 12 & 13 Class Repository
+#WDI LA 15 Class Repository
 
 This will be your shared class repo! Cheat sheets, in-class labs and code samples, curated lists of articles, and other resources will live here.
 
