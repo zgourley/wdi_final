@@ -26,7 +26,7 @@ As a student, you have **pull** permissions on this repository. We recommend mai
 
 ###How do I make a copy?
 
-Before modifying files in the repository, copy them into another folder. To do this, you can use the cp command with the -R flag, for example: <code>cp -R ~/GA/WDI_LA_12-13/templates/html5-template ~/GA/01week</code>. This will create a new html5-template/ folder inside ~/GA/01week. Including a trailing slash on the source directory will only copy the *contents* of the directory. Excluding the trailing slash, as was done in the above example, will copy the directory name and its contents.
+Before modifying files in the repository, copy them into another folder. To do this, you can use the cp command with the -R flag, for example: <code>cp -R ~/GA/WDI_LA_15/templates/html5-template ~/GA/01week</code>. This will create a new html5-template/ folder inside ~/GA/01week. Including a trailing slash on the source directory will only copy the *contents* of the directory. Excluding the trailing slash, as was done in the above example, will copy the directory name and its contents.
 
 ###What am I viewing here?
 
