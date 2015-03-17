@@ -1,14 +1,14 @@
-#Git 'Er Done! (The Basics of Git)
+#Git 'Er Done! (The Fundamentals of Git)
 ###More Git Puns:
 * "Git With The Program"
 * "Gitting Down With Git"
 * "Let's Git Going"
 
 ##Learning Objectives
-By the end of today's lesson, you will be able to:
+By the end of today's lesson, you will:
 
-* explain the basics of version control and Git
-* explain the differences between Git and Github
+* understand the fundamentals of version control and Git
+* understand the differences between Git and Github
 * initialize a new local repository
 * stage and commit files to this local repository
 * write good commit messages using best practices
@@ -18,9 +18,16 @@ By the end of today's lesson, you will be able to:
 ##Roadmap
 1. We'll start by talking about version control, Git, and Github.
 2. We'll walk through the steps of a sample Git workflow and talk about the basic Git commands and some important Git vocabulary.
-3. We'll do three short labs where you can get some practice using Git and Github.
+3. We'll do two short labs where you can get some practice using Git and Github.
 
 ##Essential Questions
+###DIY version control
+**Question:**  Let's say you are working on a term paper or a big report for work and you need to keep track of the changes you are making in case you accidentally delete something when you are making edits to a rough draft.  What could you do to manage this process?
+
+**Answers:** Maybe you do "File: Save As..." each time you go in to edit the file.  Or maybe you email yourself a copy of the file each time you save it.  
+
+Now what if your project or report has multiple files and multiple people contributing to it?  You can see how this could get out of hand quickly.  There's got to be a better way!
+
 ###What is version control?
 Version control is like a time capsule for your project.  It is a system that tracks the changes you make to all the files in your project so that you can recall previous versions later if needed.
 
@@ -29,7 +36,7 @@ Think about the typical life cycle of a file:
 * create a new file
 * save the file
 * edit the file
-* save the file again <= this is where version control comes in!
+* save the file again <- this is where version control comes in!
 
 Version control is useful for all kinds of projects, not just software development.  Photographers, graphic designers, musicians, and writers are just some of the people who can benefit from using a version control system to track changes to their work as it evolves and grows.
 
@@ -49,15 +56,20 @@ We'll talk more about the "distributed" part of Git later in the course when we 
 3. Run the command `git init` inside your project directory to initialize a new repository.
 4. Create and save a new file, which starts as "untracked".
 5. Run the command `git status` to see that you have an untracked file in your repo.
-6. Run the command `git add -A` to add this file to the staging area for a commit.
+6. Run the command `git add <file_name>` to add this file to the staging area for a commit.
 7. Run the command `git status` again to see that we have a file that has been added to the staging area and is ready to be committed.
 7. Run the command `git commit -m "<YOUR COMMIT MESSAGE GOES HERE>"` to record these changes and take a snapshot of your project in its current state.
 8. Run `git status` one more time to see that everything is up to date and there are no new changes to commit.
 9. Run `git log` to take a look at the details of our commit.
+10. Let's open our new file in our text editor and add somethimg to the file.
+11. Now, let's run `git status` again and see what it tells us.  We can see that we now have a modified file whose changes have not been staged for commit.
+12. Let's add this to the staging area so that we can commit it.  `git add <file_name>` should do the job!
+13.  Now let's get this thing committed to our repo:  `git commit -m "<YOUR COMMIT MESSAGE GOES HERE>`!
+14. Let's run `git status` one more time to see where we're at.
 
 ##Lab Time!
 ###Pre-Lab Exercise
-Let's set up our WDI folder structure (more command line practice...yay!).
+Let's set up our WDI folder structure that will help keep us organized for the next 12 weeks (more command line practice...yay!).
 
 ###Lab #1
 Make a new directory in your WDI/01_week folder and create a new HTML file inside this directory.
@@ -65,14 +77,14 @@ Make a new directory in your WDI/01_week folder and create a new HTML file insid
 ```	
 $ mkdir git_intro_lab
 $ cd git_intro_lab
-$ touch test.txt 
+$ touch index.html 
 ```
 
 Next, we'll initialize a new Git repo in this directory, add our file to the staging area, and make an initial commit.
 
 ```
 $ git init
-$ git add -A
+$ git add index.html 
 $ git commit -m "initial commit"
 ```
 
@@ -83,9 +95,9 @@ Okay, now go to Github and create a new empty repository.  Read the instructions
 
 Let's pop back over to Github now to see our handy work.
 
-Back to the terminal!  Type `subl .` inside your `git_intro_lab` directory to open this folder in Sublime Text.  Open up `test.txt` and make a few changes.
+Back to the terminal!  Type `subl .` inside your `git_intro_lab` directory to open this folder in Sublime Text.  Open up `index.html` and make a few changes.
 
-After you make these changes, go back to your terminal and run the command `git status`.  What do you see?  You should see that changes have been made to your `test.txt` file. 
+After you make these changes, go back to your terminal and run the command `git status`.  What do you see?  You should see that changes have been made to your `index.html` file. 
 
 Now, it's time to add these changes to the staging area, commit them locally, and then push those changes up to your Github repo.
 
