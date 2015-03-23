@@ -21,8 +21,8 @@
 
 #####Useful wireframing tools
 
-* [draw.io](draw.io) 
-* [balsamiq.com](balsamiq.com) 
-* [moqups.org](moqups.org) 
-* [framebox.org](framebox.org)
+* [draw.io](www.draw.io) 
+* [balsamiq.com](www.balsamiq.com) 
+* [moqups.org](www.moqups.org) 
+* [framebox.org](www.framebox.org)
 
