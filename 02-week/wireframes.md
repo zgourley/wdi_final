@@ -23,6 +23,6 @@
 
 * [draw.io](http://www.draw.io) 
 * [balsamiq.com](http://www.balsamiq.com) 
-* [moqups.org](http://www.moqups.org) 
+* [moqups.com](http://www.moqups.com) 
 * [framebox.org](http://www.framebox.org)
 
