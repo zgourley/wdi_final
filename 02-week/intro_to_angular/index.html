@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="donutShop">
+
+  <head>
+    <meta charset="utf-8">
+    <title>The Donut Shop</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>
+  </head>
+
+  <body ng-controller="DonutController as donutCtrl">
+
+    <img src="images/logo.svg" alt="The Donut Shoppe" id="logo">
+
+    <section id='available-donuts'>
+
+      <h2>Available Donuts</h2>
+      <h4>$0.89/each</h4>
+      <ul class='donuts'>
+        <li ng-click="donutCtrl.addDonut($index)" ng-repeat="donut in donutCtrl.shop.donuts">
+          <img ng-src="{{donut.image}}" alt="{{donut.type}}">
+          <h4>{{donut.type}} <span ng-show="donut.count > 0">({{donut.count}})</span></h4>
+        </li>
+      </ul>
+
+    </section>
+
+    <section id='my-donuts'>
+
+      <h2>My Selection <span ng-hide="donutCtrl.my.donuts.length == 0">({{donutCtrl.my.donuts.length}})</span></h2>
+      <h4 ng-bind="'Total – $' + donutCtrl.my.total()" ng-show="donutCtrl.my.total() > 0"></h4>
+      <ul class='donuts'>
+        <li ng-click="donutCtrl.removeDonut($index)" ng-repeat="donut in donutCtrl.my.donuts">
+          <img ng-src="{{donut.image}}" alt="{{donut.type}}">
+          <h4>{{donut.type}}</h4>
+        </li>
+      </ul>
+      
+      <p ng-hide="donutCtrl.my.donuts.length > 0">No donuts selected yet! Go pick some out, you can have as many as you like.</p>
+
+    </section>
+
+    <script src="js/main.js"></script>
+  </body>
+
+</html>
