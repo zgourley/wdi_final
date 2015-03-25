@@ -1,0 +1,51 @@
+section {
+    border-bottom: 1px dashed black;
+    padding: 10px;
+}
+
+.red-text {
+    color: red;
+}
+
+.red-bg {
+    background: red;
+    color: white;
+}
+
+.blue-bg {
+    background: blue;
+    color: white;
+}
+
+.green-bg {
+    background: green;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin: 15px;
+}
+
+.contact-info {
+    margin: 0;
+}
+
+.btn {
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+  background: #e12020;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: none;
+  margin-top: 5px;
+}
+
+.btn:hover {
+  background: #c32c2c;
+  text-decoration: none;
+}
