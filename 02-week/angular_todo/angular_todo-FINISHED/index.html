@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>To Do...or...Not To Do</title>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/angular.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/TodosController.js"></script>
+	</head>
+
+	<body ng-app="todoApp">
+		<div class="wrapper" ng-controller="TodosController as todos">
+			<header>
+				<h1>YOU'VE GOT {{ todos.todoList.length }} THINGS TO DO!</h1>
+			</header>
+
+			<main>
+
+				<form class="add-todo" ng-submit="todos.addTodo()">
+					<input class="text-box" type="text" placeholder="I need to..." ng-model="todos.text">
+					<input type="submit" class="btn btn-add" value="+">
+				</form>
+
+				<section class="todo-list">
+					<ul>
+						<li ng-repeat="todo in todos.todoList">
+							<input class="checkbox" type="checkbox" ng-model="todo.done">
+							<span ng-class="{ done: todo.done }">{{ todo.task }}</span>
+							<button ng-show="todo.done" class="btn btn-delete" ng-click="todos.deleteTodo($index)">x</button>
+						</li>
+					</ul>	
+				</section>
+			</main>
+
+		</div>
+	</body>
+</html>
