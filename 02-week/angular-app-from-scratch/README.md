@@ -11,7 +11,7 @@
 * Save some kitties by building a Kitties Adoption app in Angular
 * Rely on your newly aquired Angular skills (and other skills you've aquired at WDI) to build out this app and fullfill your quest
 * Refer to the completed Kitties Adoption app projected on the screen and use it as your guide
-* Do a ```git pull``` from our [class repository](https://github.com/ga-students/WDI_DTLA_2) to grab the [starter app](https://github.com/ga-students/WDI_DTLA_2/tree/master/02-week/angular-app-from-scratch) we have provided for you
+* Do a ```git pull``` from our [class repository](https://github.com/ga-students/WDI_LA_15) to grab the [starter app](https://github.com/ga-students/WDI_LA_15/tree/master/02-week/angular-app-from-scratch) we have provided for you
 * This is a solo lab, so you are to work individually. However, you may communicate with your fellow classmates if you are extrordinarily ***stuck*** and need a lifeline!
 * Create a repository for your app: ```git add```, ```git commit```, and ```git push``` while you're working
 * When you have finished, submit your app to Blaise by sending him your repo link
