@@ -1,0 +1,21 @@
+
+<!-- Loop through each key,value error message pair -->
+<p>Errors:
+<ul>
+<% @user.errors.messages.each do |key,value| %>
+	<li><%= key %>: <%= value.join(", ") %>
+<% end %>
+</ul></p>
+
+<div id="user-form">
+	<%= form_for(@user, :html => {:multipart => true}) do |f| %>
+		<%= f.text_field :email, placeholder: "email" %> <%= @user.errors.messages[:email].join(", ") %><br>
+		
+		<%= f.text_field :github_handle, placeholder: "github handle" %><br>
+		<%= f.number_field :favorite_number, placeholder: "fav number" %><br><br>
+
+		<%= f.submit "Create new user!" %>
+	<% end %>
+</div>
+
+<%= debug(params) %>

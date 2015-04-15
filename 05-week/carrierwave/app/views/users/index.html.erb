@@ -1,0 +1,16 @@
+
+<h1>Users</h1>
+
+<%= link_to "New user!", newuser_path %>
+
+<ul>
+	<% @users.each do |u| %>
+		<li><%= u.email %>
+			<ul>
+
+			</ul>
+		</li>
+	<% end %>
+</ul>
+
+<%= debug(params) %>
