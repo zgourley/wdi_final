@@ -1,0 +1,56 @@
+<div class="container">
+    <section>
+        <h1><%= @movie.title %></h1>
+        <p><strong>Average score:</strong> <%= @movie.average_score %></p>
+        <p><strong>Rating:</strong> <%= @movie.rating %></p>
+        <p><strong>Year released:</strong> <%= @movie.year %></p>
+        <p><strong>Description:</strong> <%= @movie.description %></p>
+    </section>
+
+    <section>
+        <h2>Reviews</h2>
+
+        <% @movie.reviews.each do |review| %>
+            <div class="review-details">
+                <h3>Review #<%= @movie.reviews.index(review) + 1 %></h3>
+                <p><strong>Reviewer:</strong> <%= review.reviewer.name %></p>
+                <p><strong>Score:</strong> <%= review.score %></p>
+                <p><strong>The verdict:</strong> <%= review.body %></p>
+            </div>
+        <% end %>
+    </section>
+
+    <section>
+        <h2>Add a new review!</h2>
+        <%= form_for [@movie, @review] do |f| %> 
+            
+            <%= f.fields_for :reviewer_attributes do |reviewer| %>  
+                <div>
+                    <%= reviewer.label :name, class: "form-label" %>
+                    <%= reviewer.text_field :name, class: "num-input" %>
+                </div>
+
+                <div>
+                    <%= reviewer.label :email, class: "form-label" %>
+                    <%= reviewer.text_field :email, class: "num-input" %>
+                </div>
+
+            <% end %>
+
+            <div>
+                <%= f.label :body, "Review", class: "form-label" %> 
+                <%= f.text_area :body, class: "text-area" %>
+            </div>
+
+            <div>
+                <%= f.label :score, class: "form-label" %> 
+                <%= f.number_field :score, class: "num-input" %>
+            </div>
+
+            <div>
+                <%= f.submit "Add your review!", class: "button" %>
+            </div>
+
+        <% end %>
+    </section>
+</div>
