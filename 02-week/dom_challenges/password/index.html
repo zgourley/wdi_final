@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Password Box</title>
+</head>
+<body>
+  <p>Type your password</p>
+  <input type="text" id="passwordBox"><button id="showPassword">show</button>
+  <script type="text/javascript">
+  	var password = "";
+    var passwordHidden = "";
+  	var passwordBox = document.getElementById("passwordBox");
+  	var showPassword = document.getElementById("showPassword");
+  	passwordBox.addEventListener("keyup", function () {
+  	  password += this.value[this.value.length - 1];
+	    this.value = this.value.replace(/[a-zA-Z]/, "*");
+      passwordHidden = this.value;
+  	});
+  	showPassword.addEventListener("mousedown", function(){
+      passwordBox.value = password;
+  	});
+    showPassword.addEventListener("mouseup", function(){
+      passwordBox.value = passwordHidden;
+    });
+  </script>
+</body>
+</html>
