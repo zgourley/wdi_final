@@ -16,48 +16,59 @@ In the following steps, we will create a file field called :image which uses the
 
 1. **Add gems.** Add to the top of your Gemfile, then `bundle install`:
 
+```ruby
 		##### CarrierWave Gems #####
 		gem 'carrierwave'
-		gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
 		gem 'fog'         # required for Amazon S3
-		gem 'mini_magick' # for post-upload image processing
+		gem 'rmagick'     # for post-upload image processing
+```
 
 2. **Create a new uploader class.** Run:
 
-		rails g uploader Avatar
+		`rails g uploader Avatar`
 
-	This creates a file which defines the class AvatarUploader: **app/uploaders/avatar_uploader.rb**
+	This creates a file which defines the class AvatarUploader: `app/uploaders/avatar_uploader.rb`
 
 
 3. **Make a file field in your model.** Inside your User model underneath the fields, make a new file field:
 
+```ruby
 		mount_uploader :image, AvatarUploader
+```
 
 	Note that the field name (:image) does NOT have to be identical to the name of the uploader.
 
 4. **Add the form field to your HTML.**  In your HTML new view:
 
+```erb
 		<%= f.file_field :image %>
+```
 
 5. **Add the image parameter to the strong params in your controller.** In your user controller:
 
+```ruby
 		params.require(:user).permit(..., :image)
+```
  
 6. **Display the uploaded images!** In your HTML index view:
 
+```erb
 		<%= image_tag u.image.url %>
- 
+```
 ----
 
 ##Resizing Uploads
 
-+ In the AvatarUploader class (app/uploaders/avatar_uploader.rb), include MiniMagick:
++ In the AvatarUploader class `app/uploaders/avatar_uploader.rb`, include rmagick:
 
-		include CarrierWave::MiniMagick
+```ruby
+		include CarrierWave::RMagick
+```
 
-+ In the AvatarUploader class (app/uploaders/avatar_uploader.rb), insert:
++ In the AvatarUploader class `app/uploaders/avatar_uploader.rb`, insert (or just uncomment):
 
+```ruby
 		version :thumb do
 			process :resize_to_fit => [32, 32]
 		end
@@ -65,16 +76,17 @@ In the following steps, we will create a file field called :image which uses the
 		version :full do
 			process :resize_to_fit => [1024, 768]
 		end
+```
 
 + In the view, we can refer to these new versions as follows:
 
+```erb
 		<%= image_tag u.image.url(:thumb) %>
-
+```
 ----
 
 + CarrierWave can do a lot more. For example, it supports an easy way for users to type in a URL and have CarrierWave auto-grab the image from the URL then save it on S3! 
 
 + For this and more cool tricks, read the documentation:
 	+ [CarrierWave documentation](https://github.com/carrierwaveuploader/carrierwave)
-	+ [CarrierWave-Mongoid docs](https://github.com/carrierwaveuploader/carrierwave-mongoid)
 	+ [Cool screencast](https://gorails.com/episodes/file-uploading-with-carrierwave)
