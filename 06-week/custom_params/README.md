@@ -4,7 +4,7 @@ Here are the steps:
 
 1. Handle the query in the controller. When a user goes to
    `/users?q=chuck` we will render a view with a list of all
-users with the name chuck.
+users with the name "chuck".
 
     For this we check the params hash in the controller and then perform
 a SQL query based on the `params[:q]` value.
@@ -15,7 +15,7 @@ a SQL query based on the `params[:q]` value.
     #app/controllers/user_controller.rb
     def index
         if params[:q]
-            @users = User.where('name like ?', '%' + params[:q] + '%'
+            @users = User.where('name like ?', '%' + params[:q] + '%')
         else
             @users = User.all
         end
