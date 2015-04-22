@@ -13,21 +13,21 @@ Puts the current state in memory and attaches it to this commit with a message.
 
 ```$ git remote add origin git@github.com:username/reponame.git```Initializes a new remote repository. 
 
-```$ git push (-u) (origin master)``` Pushes commits to remote 
-
-```$ git push origin <branchname>``` pushes branch to remote repo (or origin) 
+```$ git push (-u) (origin master)``` Pushes commits to remote
 
 ```$ git status``` Status update on version tracking state
 
-```$ git clone <SSH or HTTPS>``` Clones a remote repository as a new local repository
+```$ git clone \<SSH or HTTPS>``` Clones a remote repository as a new local repository
 
-```$ git branch ``` returns a list of all available branches
+```$ git branch ``` prints out a list of all available branches in Terminal
 
 ```$ git branch <branchname>``` creates a new branch called branchname
 
 ```$ git checkout <branchname>``` moves you to a different branch
 
-```$ git checkout - b <branchname>``` creates a new branch and checks it out all in one
+```$ git checkout - b <branchname>``` creates a new branch and checks it out all in  one
 
 ```$ git merge <branchname>```merges the branch called \<branchname> into 
+
+```$ git diff <branchname>``` returns information about **differences** as insertions (in green) and deletions (in red)
 
