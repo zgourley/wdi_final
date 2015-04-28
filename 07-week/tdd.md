@@ -16,7 +16,7 @@ You can bootstrap a project by running `rspec --init` in the terminal
 
 To run an individual test you run `rspec myfile_spec.rb`
 
-To run the tests in a folder you run `rspecmyfoldername`
+To run the tests in a folder you run `rspec myfoldername`
 
 Let's TDD Checking Credit Cards
 ---
