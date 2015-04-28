@@ -8,11 +8,14 @@ Why TDD?
 Rspec
 ---
 We'll be using the Rspec gem to do tdd in this class. Here is the
-(documentation)[http://rspec.info/documentation/3.2/rspec-expectations/#Equivalence]
+[documentation](http://rspec.info/documentation/3.2/rspec-expectations/#Equivalence)
 
 To get use rspec in a project, make sure the rspec gem is installed.
+
 You can bootstrap a project by running `rspec --init` in the terminal
+
 To run an individual test you run `rspec myfile_spec.rb`
+
 To run the tests in a folder you run `rspecmyfoldername`
 
 Let's TDD Checking Credit Cards
@@ -51,5 +54,11 @@ Let's try one more, `4417 1234 5678 9112`
 
 That card is not valid.
 
+Mission
+---
+
 Your mission is to write a program that accepts a credit card number. The program should print the card's type (or Unknown) as well a Valid/Invalid indication of whether or not the card passes the Luhn algorithm.
+
+Use Rspec and a TDD aproach to write the program.
+
 
