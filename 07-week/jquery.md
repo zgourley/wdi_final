@@ -56,14 +56,14 @@ Specifity in selections
 ---
 You can select the table by id like so: `$('#turtles')` or `$('.data')`
 
-We can narrow down our selection like so `$('%turtles tr')` or be more specific like`$('%turtles thead tr')`
+We can narrow down our selection like so `$('#turtles tr')` or be more specific like`$('#turtles thead tr')`
 
 Testing the selection
 ---
 
 ```javascript
 $(function(){
-  alert(%('#turtles tr').length + ' elements');
+  alert($('#turtles tr').length + ' elements');
 });
 ```
 
