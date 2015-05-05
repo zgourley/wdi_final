@@ -1,4 +1,4 @@
- #Controller Specs
+#Controller Specs
 in Rails using Rspec
 
 > The goal for today is to learn how to test our controller actions
