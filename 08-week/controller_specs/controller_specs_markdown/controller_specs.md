@@ -1,7 +1,19 @@
 #Controller Specs
 in Rails using Rspec
 
-Getting setup. Do this or clone 
+> The goal for today is to learn how to test our controller actions
+
+
+## Setup
+
+```git clone https://github.com/blaisethomas/controller_specs``` for starter code 
+
+```bundle install```
+
+```rake db:migrate```
+
+
+This is just a basic scaffold for a single model app. If the clone link above is no longer available, you can:
 
 ```
 cd scratch/
@@ -102,6 +114,8 @@ expect { object.action }.to change(object, :value).by(delta)
 ![fail](fail.png)
 
 ##5 - Then make it pass by writing the code (GREEN)
+This is the bit we already know how to do!
+
 
 ![pass](pass.png)
 
