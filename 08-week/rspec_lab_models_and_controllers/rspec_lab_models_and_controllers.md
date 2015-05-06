@@ -22,7 +22,7 @@ Dr. Feelgood has hired you to build an app that will track appointments for his 
   - A Doctor must have a `specialty` to be entered into the database
   - A Doctor’s `active` property should be false by default (HINT: Don’t try to fake it with FactoryGirl. ***How can you assign default values to a record being saved in the database???***)
   
-- The Doctor class should have two instance methods:
+- The Doctor class should have two class methods:
   
   - `active_doctors` that returns the number of doctors whose `active` field is true
   - `inactive_doctors` that returns the number of doctors whose `active` field is false
