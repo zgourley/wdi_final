@@ -9,11 +9,11 @@
 Today we're going to cover how to write integration tests for a Rails API. We're going to write the tests together and it will be your job to make each of them pass. The API we're building will handle CRUD for movies. When we're done, our API will provide the following endpoints:
 
   ```
-  GET     /movies
-  POST    /movies
-  GET     /movies/:id
-  PATCH   /movies/:id
-  DELETE  /movies/:id
+  GET     /api/movies
+  POST    /api/movies
+  GET     /api/movies/:id
+  PATCH   /api/movies/:id
+  DELETE  /api/movies/:id
   ```
 
 ##A few words about testing our API
