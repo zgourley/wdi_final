@@ -387,7 +387,7 @@ To write our tests, we will use RSpec's request specs.  It should be pointed out
       end
 
       it "updates a movie's attributes" do
-        expect(movie.reload.rating).to eq("R")
+        expect(@movie.reload.rating).to eq("R")
       end
     end    
     ```
