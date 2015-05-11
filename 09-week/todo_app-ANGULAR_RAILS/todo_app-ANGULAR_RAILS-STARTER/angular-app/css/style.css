@@ -1,0 +1,134 @@
+/*Fonts
+=====================================*/
+@font-face {
+    font-family: 'Ostrich';
+    src: url('ostrich-sans-inline-regular.eot');
+    src: url('ostrich-sans-inline-regular.eot?#iefix') format('embedded-opentype'),
+         url('ostrich-sans-inline-regular.woff') format('woff'),
+         url('ostrich-sans-inline-regular.ttf') format('truetype'),
+         url('ostrich-sans-inline-regular.svg') format('svg');
+    font-weight: normal;     
+}
+
+/*General styles
+=====================================*/
+body {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 300;
+	background: url(../images/background-flip.jpg) no-repeat center center fixed;
+	background-size: cover;
+	background-position: center;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.wrapper {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+/*Header styles
+====================================*/
+
+header {
+	color: white;
+	text-align: center;
+	border: 1px solid #fff;
+	width: 75%;
+	margin: 25px auto;
+}
+
+header h1 {
+	font-family: "Ostrich";
+	font-weight: normal;
+	font-size: 80px;
+}
+
+header h4 {
+	font-weight: 300;
+}
+
+/*Main container styles
+====================================*/
+
+main {
+	background: #fff;
+	min-height: 600px;
+	width: 75%;
+	margin: 0 auto;
+}
+
+/*"Add todo" section styles
+===================================*/
+
+.add-todo {
+	padding: 30px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.text-box {
+	width: 85%;
+	outline: none;
+	padding: 5px 0 5px 10px;
+}
+
+/*"Todo list" section styles
+===================================*/
+
+.todo-list {
+	width: 80%;
+	margin: 0 auto;
+}
+
+li {
+	height: 50px;
+	border-bottom: 1px solid rgb(230, 230, 230);
+	padding-top: 25px;
+	padding-left: 15px;
+}
+
+li:hover {
+	background-color: rgb(230, 230, 230);
+}
+
+.done {
+	text-decoration: line-through;
+	color: gray;
+}
+
+/*Button & check box styles
+===================================*/
+
+.btn {
+	border: none;
+	padding: 6px 15px;
+	color: white;
+	background: none;
+	outline: none;
+}
+
+.btn-add {
+	background-color: #315481;
+	width: 11%;
+}
+
+.btn-delete {
+	float: right;
+	margin-right: 5px;
+	border-radius: 50%;
+	border: 1px solid #F04A2A;
+	color: #F04A2A;
+	width: 30px;
+	height: 30px;
+	padding: 0 0 3px 0px;
+}
+
+.checkbox {
+	margin: 0 10px;
+	outline: none;
+}
