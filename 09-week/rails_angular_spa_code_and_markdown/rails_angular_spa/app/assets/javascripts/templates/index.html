@@ -1,0 +1,45 @@
+  <div ng-controller="AuthenticationController as auth">
+      <!-- begin login form -->
+      <form class="login-form" ng-submit="auth.login()" ng-if="auth.isAuthenticated == false">
+          <input class="login-input" type="text" placeholder="email" ng-model="auth.email">
+          <input class="login-input" type="password" placeholder="password" ng-model="auth.password">
+          <input type="submit" value="Log in" class="btn btn-submit">
+      </form>
+      <!-- end login form -->
+
+      <!-- begin logout button -->
+      <div ng-if="auth.isAuthenticated">
+        <button ng-click="auth.logout()">Logout</button>
+      </div>
+      <!-- end logout button -->
+      
+  </div>
+
+
+<div class="jumbotron" ng-init="dogsCtrl.getDogIndex()">
+  <h1 class="text-center">A Dog App</h1>
+</div>
+
+<!-- error section -->
+<div ng-if="dogsCtrl.error">
+  {{dogsCtrl.error}}
+</div>
+<!-- end error section -->
+
+
+<a href="#/new"><button class="btn">New Dog</button></a>
+
+<section>
+  <ul>
+    <li ng-repeat="dog in dogsCtrl.jsonDogs">{{dog.name}} - {{dog.age}}
+    <div>
+      <button class="btn"><a href="#/dogs/{{dog.id}}">Show</a></button>
+      
+      <button class="btn"><a href="#/dogs/{{dog.id}}/edit">Edit</a>
+      <!-- localhost:3000/#/dogs/1/edit -->
+      </button>
+      <button class="btn" ng-click="dogsCtrl.deleteDog(dog.id, $index)">Delete</button>
+    </div>
+    </li>
+  </ul>
+</section>
