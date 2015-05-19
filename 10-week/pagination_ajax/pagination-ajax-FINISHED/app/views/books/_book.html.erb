@@ -1,0 +1,19 @@
+<div class="thumbnail">
+    <div class="media">
+
+        <div class="media-left">
+            <%= image_tag book.image, class: "media-object thumbnail" %>
+        </div>
+
+        <div class="media-body panel panel-default">
+            <div class="panel-heading">
+                <h4 class="media-heading text-primary"><em><%= book.title %></em></h4>
+                <h5 class="text-muted">by <%= book.author %></h5>
+            </div>
+            <div class="panel-body">
+                <blockquote><em><p class="first-words"><%= book.first_words %></p></em></blockquote>
+            </div>
+        </div>
+
+    </div> <!-- end media container -->
+</div> <!-- end thumbnail container -->
