@@ -3,26 +3,32 @@
 
         <div class="media-left">
             <%= image_tag book.image, class: "media-object thumbnail" %>
-            <p class="text-center"><span class="label label-info"><i class="glyphicon glyphicon-heart"></i> 42 hearts</span></p>
+            <p class="text-center">
+                <span class="label label-info">
+                    <i class="glyphicon glyphicon-heart"></i> 42 hearts
+                </span>
+            </p>
         </div>
 
         <div class="media-body panel panel-default">
 
-            <div class="panel-heading">
+            <div class="panel-heading clearfix">
 
-                <h4 class="media-heading text-primary">
-                    <em><%= book.title %></em>
-                    <button class="btn btn-xs btn-danger pull-right">
-                        <i class="glyphicon glyphicon-heart"></i> this book!
-                    </button>
-                </h4>
+                <div class="pull-left">
+                    <h4 class="media-heading text-primary"><em><%= book.title %></em></h4>
+                    <h5 class="text-muted">by <%= book.author %></h5>
+                </div>
 
-                <h5 class="text-muted">by <%= book.author %></h5>
+                <button class="btn btn-xs btn-danger pull-right">
+                    <i class="glyphicon glyphicon-heart"></i> this book!
+                </button>
 
-            </div>
+            </div> <!-- end panel-heading clearfix -->
 
             <div class="panel-body">
-                <blockquote><em><p class="first-words"><%= book.first_words %></p></em></blockquote>
+                <blockquote>
+                    <em><p class="sans-serif"><%= book.first_words %></p></em>
+                </blockquote>
             </div>
 
         </div> <!-- end panel -->
