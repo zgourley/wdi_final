@@ -14,10 +14,12 @@ Extend our **Good Reads** app (the one that uses pagination and AJAX) to allow u
 * If you refresh the page, the number of "likes" for each book should **not** be reset to 0 (i.e. you need to make sure that you are saving each like to the database).
 
 ##The Express Option
-Extend our **Blogger** app to add full CRUD functionality for blog posts and, optionally, comments.  This is an opportunity to get some self-guided practice with Express and Jade.  
+Keep building on our **Blogger** app! This is an opportunity to get some self-guided practice with Express, Socket.io, and Jade.  Here's some ideas:
 
-Here's a few suggestions on how you might approach this.  Feel free to take them or leave them.
+* Add the ability to leave comments for each blog post. This should happen on the posts show view. Save comments to MongoDB and then figure out how to use web sockets to update the list of comments in real time.
 
-* Start by creating a user interface in the view for a given piece of functionality (i.e. updating a post or deleting a post).
-* Once you have an interface set up, add a route/action in your Express app to handle the request being initiated by the interface you just created in your view template.
+* Add full CRUD functionality for blog posts and, optionally, comments.  Here's a few suggestions on how you might approach this.  Feel free to take them or leave them.
+  - Start by creating a user interface in the view for a given piece of functionality (i.e. updating a post or deleting a post).
+  - Once you have an interface set up, add a route/action in your Express app to handle the request being initiated by the interface you just created in your view template.
+  
 * Once you get full CRUD working, research how to make an application layout template using Jade. This should work like the equivalent of our `application.html.erb` page in Rails.
