@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PaginationAjaxFinished</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div class="container">
+
+        <header>
+            <div class="page-header text-center">
+                <h1 class="text-danger sans-serif"><span class="glyphicon glyphicon-book small" aria-hidden="true"></span> good reads</h1>
+            </div>
+        </header>
+
+        <%= yield %>
+
+    </div> <!-- end container -->
+
+</body>
+</html>
