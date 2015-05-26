@@ -2,13 +2,12 @@
 
 * Austin L. and Conrad
 * Carlos and Dan
-* Kyle H. and Fancy
+* Kyle H. and Mike
+* Abe and Fancy
 * Mat and Rushi
 * Richard and Gobind
-* Russ and Curtis
-* Abe and Austin K.
+* Russ and Austin K.
 * Alok and Sarah
 * Austen W. and Ksenia
 * Kyle C. and Nick
-* Mike and Nancy
 * Joey and Zack
