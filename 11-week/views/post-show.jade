@@ -1,0 +1,40 @@
+extends ./layout.jade
+block title
+  title= post.title
+
+block content
+  .ui.page.grid
+    .sixteen.wide.column
+      h1.header= post.title
+      p= post.body
+      a.ui.button(href="/posts/#{post._id}/edit") Edit Post
+      a.ui.button.negative Remove Post
+
+    .eight.wide.column
+      .ui.small.form.segment
+        h4.ui.diving.header
+          i.comment.icon
+          | New Comment
+        .one.field
+          .field
+            input(type="text" id="comment-box" placeholder="My text here...")
+          .field
+            button.ui.button.positive.right.floated(id="new-comment-button") Create Comment
+
+      ul#comments-list
+
+block script
+  script(type="text/javascript").
+    var socket = io();
+    var commentBox = $('#comment-box');
+    var commentButton = $('#new-comment-button');
+
+    commentButton.on('click', function(evt){
+      socket.emit('new-comment', commentBox.val());
+      commentBox.val('');
+    });
+
+    socket.on("server-says", function(data){
+      console.log(data);
+      $("#comments-list").append("<li>" + data + "</li>");
+    });
