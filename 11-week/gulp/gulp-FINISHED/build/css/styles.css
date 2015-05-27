@@ -1,0 +1,20 @@
+body {
+  background-image: url(starrynight.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+  body .main {
+    background-color: white;
+    width: 62.5%;
+    margin: 0 auto;
+    font-family: Helvetica, sans-serif;
+    border-radius: 15px; }
+    body .main .painting {
+      background-color: #006600;
+      color: #ccffcc;
+      transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+      transition: width 2s, height 2s, background-color 2s, transform 2s; }
+    body .main .details {
+      background-color: #6f6; }
+      body .main .details:last-child {
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px; }
