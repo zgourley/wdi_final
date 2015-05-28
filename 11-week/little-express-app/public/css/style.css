@@ -1,0 +1,15 @@
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+input[name="title"] {
+      font-size: x-large !important;
+      font-weight: bold !important;
+    }
+
+#edit-post > * {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.025);
+}

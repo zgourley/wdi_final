@@ -1,0 +1,94 @@
+extends ./layout.jade
+block title
+  title= post.title
+
+block content
+  #page-content-show.ui.page.grid
+    .sixteen.wide.column
+      h1#post-title.header= post.title
+      p#post-body= post.body
+      a#edit-post-button.ui.button(href="/posts/#{post._id}/edit") Edit Post
+      button#remove-post-button.ui.button.negative Remove post
+
+    .eight.wide.column
+      .ui.small.form.segment
+        h4.ui.diving.header
+          i.comment.icon
+          | New Comment
+        .one.field
+          .field
+            input(type="text" id="comment-box" placeholder="My text here...")
+          .field
+            button.ui.button.positive.right.floated(id="new-comment-button") Create Comment
+
+      ul#comments-list
+        if post.comments
+          each comment in post.comments
+            li= comment
+
+  #page-content-edit.ui.page.grid
+    .sixteen.wide.column
+      form#edit-post.ui.form(method="PATCH" action="posts/#{post._id}")
+        input(type="text" name="title" value="#{post.title}")
+        textarea(name="body")= post.body
+        button.ui.button.positive(type="submit") Update Post
+
+  .ui.hidden.info.message Successfully Deleted Message
+
+block script
+  script(type="text/javascript").
+    $('#page-content-edit').hide();
+    var socket = io();
+    var commentBox = $('#comment-box');
+    var commentButton = $('#new-comment-button');
+
+    commentButton.on('click', function(evt){
+      socket.emit('new-comment', {_id: "#{post._id}" , comment: commentBox.val()});
+      commentBox.val('');
+    });
+
+    socket.on("server-says", function(data){
+      console.log(data);
+      $("#comments-list").append("<li>" + data + "</li>");
+    });
+
+    $('#edit-post-button').on('click', function(evt){
+      evt.preventDefault();
+      $('#page-content-show').hide();
+      $('#page-content-edit').show();
+    });
+
+    $('#edit-post').on('submit', function(evt){
+      evt.preventDefault();
+      $('#page-content-edit').hide();
+      console.log("sending changes..");
+      //console.log( $(this).serialize());
+      $.ajax({
+        url: '/posts/#{post._id}',
+        method: 'PATCH',
+        data: $('#edit-post').serialize(),
+        success: function(data){
+          console.log(data);
+          var updatedPost = data;
+          $('#post-title').text(updatedPost.title);
+          $('#post-body').text(updatedPost.body);
+          $('#page-content-show').fadeIn('slow');
+        }
+      });
+    });
+
+    $('#remove-post-button').on('click', function(evt){
+      evt.preventDefault();
+      $('#page-content-edit').hide();
+      $('#page-content-show').hide();
+      console.log("sending remove signal..");
+      $.ajax({
+        url: '/posts/#{post._id}',
+        method: 'DELETE',
+        success: function(data){
+          //console.log(data);
+          //window.location.href = "/posts/" + data._id;
+          $('.info.message').fadeIn('slow');
+        }
+      });
+    });

@@ -1,0 +1,54 @@
+extends ./layout.jade
+
+block title
+  title Posts Index
+
+block content
+  .ui.page.grid
+    .sixteen.wide.column
+      h1 Check out the latest posts or 
+        button#create-post.ui.button.positive Create a New Post
+
+      ul#posts-list
+        each post in posts
+          li
+            a(href="/posts/" + post._id) #{post.title}
+
+      .ui.modal
+        h4.ui.diving.header Post Details
+        .content
+          form#post-details.ui.form(method="POST" action="/posts")
+            label Title
+            input(type="text" placeholder="My first post" name="title")
+            label Body
+            textarea(name="body" placeholder="Content goes here...")
+            button.ui.button.positive(type="submit") Create New Post
+        div.actions
+          .ui.button Cancel
+
+block script
+  script(type="text/javascript").
+    $('.ui.modal').modal();
+    $('#create-post').on('click', function(){
+      $('.ui.modal').modal('show');
+    });
+
+    $('#post-details').on('submit', function(evt){
+      evt.preventDefault();
+      $.ajax({
+        method: "POST",
+        url: '/posts',
+        data: $('#post-details').serialize(),
+        success: function(data){
+          $('.ui.modal').modal('hide');
+          console.log(data);
+          $('#posts-list').append(
+            '<li>'
+              + '<a href="/posts/' + data[0]._id + '">'
+              + data[0].title
+              + '</a>'
+            + '</li>'
+            );
+        }
+      });
+    });

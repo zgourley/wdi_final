@@ -1,0 +1,27 @@
+extends ./layout.jade
+block title
+  title= post.title
+
+block content
+  .ui.page.grid
+    .sixteen.wide.column
+      form#edit-post.ui.form(method="PATCH" action="posts/#{post._id}")
+        input(type="text" name="title" value="#{post.title}")
+        textarea(name="body")= post.body
+        button.ui.button(type="submit") Update Post
+
+block script
+  script(type="text/javascript").
+    $('#edit-post').on('submit', function(evt){
+      evt.preventDefault();
+      //console.log( $(this).serialize());
+      $.ajax({
+        url: '/posts/#{post._id}',
+        method: 'PATCH',
+        data: $('#edit-post').serialize(),
+        success: function(data){
+          //console.log(data);
+          window.location.href = "/posts/" + data._id;
+        }
+      });
+    });
