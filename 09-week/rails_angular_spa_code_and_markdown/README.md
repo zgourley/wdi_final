@@ -84,6 +84,7 @@ root 'home#index
 
 
 
+
 - Inside of app/assets/javascripts/angular-config create two files ```app.js``` and ```routing.js```
 - Inside of app/assets/javascripts/angular-controllers create ```dogsController.js```
 - Inside of app/assets/javascripts/templates create ```index.html```
@@ -98,6 +99,9 @@ angular.module('dogApp',['templates','ngRoute']);
 ***routing.js***
 
 ``` javascript
+angular.module('dogApp')
+  .config(['$routeProvider', config]);
+
 function config($routeProvider){
   $routeProvider
   .when('/',{
@@ -485,11 +489,13 @@ self.showDog = function(){
 
 
 
+
 - If a user successfully authenticates with their email address and password, then we will send the client their access token.
 
 
 
-- Then the client must send this access token back to our Rails API with every request or they will receive a 401 unauthorized response from the server. 
+
+- Then the client must send this access token back to our Rails API with every request or they will receive a 401 unauthorized response from the server.
 
 
 ***Before we get started, let's get on the same page about the things we will need to add:***
@@ -597,10 +603,10 @@ end #end module
 module API
   class DogsController < ApplicationController
     before_action :restrict_access, only:[:update,:create,:destroy]
-    
+
  ...
  ...
- 
+
 
 private
 	def restrict_access
@@ -932,4 +938,3 @@ angular.module('dogApp')
         <button ng-click="auth.logout()">Logout</button>
       </div>
 ```
-
