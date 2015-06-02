@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+    <!-- start header -->
+    <header>
+      <h2 class="well text-primary">
+        <%= image_tag @user.avatar_url, class: "avatar img img-circle" %>
+        <em><%= @user.first_name %>'s Profile Page</em>
+      </h2>
+    </header>
+    <!-- end header -->
+
+    <!-- start contact info -->
+    <section class="panel panel-primary">
+      <div class="panel-heading">
+        <h4 class="panel-title">Contact Info</h4>
+      </div>
+      <ul class="list-group panel-body">
+        <li class="list-group-item"><strong>FIRST NAME:</strong> <%= @user.first_name %></li>
+        <li class="list-group-item"><strong>LAST NAME:</strong> <%= @user.last_name %></li>
+        <li class="list-group-item"><strong>EMAIL:</strong> <%= @user.email %></li>
+        <li class="list-group-item"><strong>USERNAME:</strong> <%= @user.username %></li>
+      </ul>
+    </section>
+    <!-- end contact info -->
+
+  </div> <!-- end column -->
+</div> <!-- end row -->

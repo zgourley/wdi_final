@@ -1,0 +1,22 @@
+<header>
+  <h2 class="page-header text-info">Users</h2>
+</header>
+
+<section>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <ul class="list-group">
+        <% @users.each do |user| %>
+          <a href=<%= user_path(user) %>
+            <li class="list-group-item clearfix">
+              <%= image_tag user.avatar_url, class: "img img-circle avatar pull-right" %>
+              <h4><%= "#{user.first_name} #{user.last_name}" %></h4>
+            </li>
+          </a>
+        <% end %>
+      </ul>
+
+    </div> <!-- end column -->
+  </div> <!-- end row -->
+</section>
